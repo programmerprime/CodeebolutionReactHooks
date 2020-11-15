@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Calculator from "./CalculatorLiftingStateUp/Calculator";
+import ClassComponentWithPrevState from "./componentsUseState/ClassComponentWithPrevState";
+import ClassCounter from "./componentsUseState/ClassCounter";
+import HookCounter from "./componentsUseState/HookCounter";
+import UseStateWithArray from "./componentsUseState/UseStateWithArray";
+import UseStateWithObjects from "./componentsUseState/UseStateWithObjects";
+import UseStateWithPreviousState from "./componentsUseState/UseStateWithPreviousState";
+import PracticeComponent from "./PracticeComponent";
+import ClassTitleUpdate from "./UseEffectComponents/ClassTitleUpdate";
+import HookMouse from "./UseEffectComponents/HookMouse";
+import HookMouseContainer from "./UseEffectComponents/HookMouseContainer";
+import UseEffectCounter from "./UseEffectComponents/UseEffectCounter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ClassTitleUpdate /> */}
+      {/* <UseEffectCounter /> */}
+      <HookMouseContainer />
     </div>
   );
 }
