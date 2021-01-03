@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 
 const PracticeComponent = () => {
-  const initialCount = 0;
-
-  const [count, setCount] = useState(initialCount);
-
-  const incrementFive = () => {
-    for (let i = 0; i < 5; i++) {
-      setCount((prevCount) => prevCount + 1);
-    }
-  };
+  const [name, setName] = useState({ firstname: "", lastname: "" });
 
   return (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => setCount(initialCount)}>Reset</button>
-      <button onClick={() => setCount((prevCount) => prevCount - 1)}>
-        Decrement
-      </button>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
-        Increment
-      </button>
-      <button onClick={incrementFive}>Increment by 5</button>
+      <input
+        type="text"
+        value={name.firstname}
+        onChange={(e) => setName({ ...name, firstname: e.target.value })}
+      />
+      <input
+        type="text"
+        value={name.lastname}
+        onChange={(e) => setName({ ...name, lastname: e.target.value })}
+      />
+      <h1>First Name: {name.firstname} </h1>
+      <h1>Last Name: {name.lastname} </h1>
+      <h3> {JSON.stringify(name)} </h3>
     </div>
   );
 };

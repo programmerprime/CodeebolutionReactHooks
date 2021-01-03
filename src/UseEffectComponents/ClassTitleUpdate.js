@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class ClassTitleUpdate extends Component {
+export default class ClassTitleUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,9 +10,9 @@ export default class ClassTitleUpdate extends Component {
     this.nameUpdate = this.nameUpdate.bind(this);
   }
 
-  componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
-  }
+  // componentDidMount() {
+  //   document.title = `You clicked ${this.state.count} times`;
+  // }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.count !== this.state.count) {
@@ -23,7 +23,7 @@ export default class ClassTitleUpdate extends Component {
 
   nameUpdate(e) {
     this.setState({ name: e.target.value });
-    console.log(this.state.name);
+
     console.log("name updated");
   }
   render() {

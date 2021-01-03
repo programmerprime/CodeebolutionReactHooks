@@ -4,6 +4,10 @@ const UseEffectCounter = () => {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
 
+  // the callback function inside useEffect is called on every render
+  // but if the dependency list is empty, it runs only on first render
+  // or if there is any variable inside the dependency list, the function will execute each time the variable changes
+
   useEffect(() => {
     console.log("updated document title");
     document.title = `You clicked ${count} times`;
@@ -16,7 +20,10 @@ const UseEffectCounter = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <button onClick={() => setCount(count + 1)}>Clicked {count} times</button>
+      <h2>Your name is : {name}</h2>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Clicked {count} times
+      </button>
     </div>
   );
 };

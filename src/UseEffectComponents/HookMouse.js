@@ -14,6 +14,7 @@ const HookMouse = () => {
     window.addEventListener("mousemove", logMousePosition);
 
     return () => {
+      // i think this returned call back function works as componentWillUnmount(), that means when the component is removed from the UI
       console.log("got out from useEffect");
       window.removeEventListener("mousemove", logMousePosition);
     };
